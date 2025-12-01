@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JourneyHive - Book Now</title>
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+     :root{
+      --bg: #f5f6fa;
+      --card: #fff;
+      --accent: #ffcb05;
+      --muted: #6b6b6b;
+   
+      --shadow-soft: 0 10px 30px rgba(14, 20, 30, 0.06);
+    }
+      body { font-family: 'Poppins', sans-serif; }
+  .hover-scale:hover { transform: scale(1.05) rotateX(2deg); transition: 0.3s ease-in-out; }
+  .hover-shadow:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: 0.3s ease-in-out; }
+  .glass-card {
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .accordion {
+    border-top: 1px solid #eee;
+}
+
+.acc-item {
+    border-bottom: 1px solid #eee;
+}
+
+.acc-btn {
+    width: 100%;
+    text-align: left;
+    padding: 14px;
+    background: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acc-btn::after {
+    content: '+';
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.acc-btn.active::after {
+    content: '-';
+}
+
+.acc-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding: 0 14px;
+    color: #444;
+}
+.acc-content.open {
+    padding: 10px 14px 20px;
+}
+
+ /* Wrapper */
+    .locations-wrapper {
+      padding: 60px 0;
+      width: 92%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    /* Title */
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 35px;
+      position: relative;
+      display: inline-block;
+      color: #111;
+    }
+
+    .title:after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #ffcb05;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    /* CARD */
+    .card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    /* HEADINGS */
+    .card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* PARAGRAPHS */
+    .card p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .card p strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Button */
+    .btn {
+      background: #ffcb05;
+      padding: 8px 22px;
+      display: inline-block;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #000;
+      margin-top: 15px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      background: #e0b000;
+      transform: scale(1.05);
+    }
+
+    /* Ripple Animation */
+    .btn:active::after {
+      content: "";
+      position: absolute;
+      width: 160%;
+      height: 160%;
+      background: rgba(255, 255, 255, 0.45);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      animation: ripple 0.4s linear;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 992px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    
+    /* Simple fixed header (keeps your original style) */
+    header.site-nav{
+      background:#0f1724;
+      color:#fff;
+      position:fixed;
+      top:0; left:0; right:0;
+      height:64px;
+      display:flex;
+      align-items:center;
+      z-index:1200;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    .site-nav .container{
+      width:100%;
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{ color:var(--accent); font-weight:700; display:flex; gap:8px; align-items:center; }
+    nav.desktop{ color:#e6eef9; display:flex; gap:22px; font-weight:600; }
+    nav.desktop a{ color:inherit; text-decoration:none; opacity:.95 }
+    nav.desktop a:hover{ color:var(--accent); }
+
+    /* Page container */
+    .page {
+      max-width:var(--container);
+      margin: 0 auto;
+      padding: 36px 18px 72px;
+    }
+
+    /* TWO-COLUMN CONTACT/FORM WRAPPER */
+    .contact-row{
+      display:flex;
+      gap:40px;
+      align-items:stretch; /* keep both columns same height */
+      justify-content:center;
+      width:100%;
+      margin-top:18px;
+    }
+    /* left column width & right column width tuned to match your reference */
+    .col-left{ flex: 0 0 360px; max-width:360px; display:flex; align-items:center; justify-content:center; }
+    .col-right{ flex: 1 1 520px; max-width:640px; }
+
+    /* Stay Connected card (left) */
+    .stay-card{
+      width:100%;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+      padding:34px 28px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-height:420px; /* keeps visual parity with form */
+    }
+    .stay-card h2{
+      font-family: "Playfair Display", serif;
+      font-size:30px;
+      margin:0 0 18px;
+      color:#111;
+      font-weight:500;
+    }
+    .contact-icon{
+      width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid rgba(0,0,0,0.03);
+      box-shadow:0 10px 28px rgba(18,20,24,0.06);
+      margin:12px auto;
+    }
+    .contact-text{ color:var(--muted); margin:8px 0; font-size:15px; }
+
+    .divider-hr{ width:70%; height:1px; background:#efefef; margin:18px 0; border-radius:2px; }
+
+    /* Form card (right) */
+    .form-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+      padding:26px 28px;
+      min-height:420px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .form-card h3{ margin:0 0 10px; font-size:20px; font-weight:700; letter-spacing:0.2px; }
+    .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 18px; }
+    .form-row-full{ grid-column: 1 / -1; }
+
+    label.form-label{ display:block; font-size:13px; margin-bottom:6px; color:#333; font-weight:600; }
+    input.form-control, select.form-control{
+      width:100%;
+      padding:12px 14px;
+      border-radius:8px;
+      border:1px solid #e6e6e6;
+      font-size:14px;
+      background:#fff;
+      transition: box-shadow .18s, border-color .18s;
+    }
+    input.form-control:focus, select.form-control:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 6px 18px rgba(244,203,5,0.12);
+    }
+
+    .captcha-row{ display:flex; align-items:center; gap:12px; }
+    .captcha-label{ font-weight:700; color:#222; margin-right:8px; min-width:60px; }
+
+    .submit-btn{
+      margin-top:12px;
+      background:var(--accent);
+      color:#000;
+      border:0;
+      padding:14px 18px;
+      border-radius:8px;
+      font-weight:800;
+      letter-spacing:3px;
+      cursor:pointer;
+      width:100%;
+      box-shadow:0 6px 18px rgba(230,180,0,0.12);
+    }
+
+    /* small helper spacing and error text */
+    .field-wrap{ display:flex; flex-direction:column; gap:6px; }
+    .error-msg{ color:#c0392b; font-size:13px; display:none; margin-top:6px; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .contact-row{ gap:26px; padding:0 8px; }
+      .col-left{ flex-basis:320px; max-width:320px; }
+      .col-right{ max-width:720px; }
+    }
+
+    @media (max-width: 760px){
+      .contact-row{ flex-direction:column; align-items:center; padding:0 8px; }
+      .col-left, .col-right{ width:100%; max-width:100%; flex:unset; }
+      .stay-card, .form-card{ min-height:auto; width:100%;}
+      .form-grid{ grid-template-columns: 1fr; }
+      .form-row-full{ grid-column:auto; }
+      body{ padding-top:72px; }
+    }
+    
+  </style>
+</head>
+
+<body class="bg-gray-100 ">
+
+<!-- ================= NAVBAR ================= -->
+<header class="bg-gray-900 text-gray-200 font-sans shadow-md fixed w-full z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6 md:px-0">
+    <div class="text-2xl font-bold text-yellow-600 flex flex-col items-center md:flex-row md:items-center">
+      <span class="mr-2">✈️</span> JourneyHive
+      <span class="text-sm font-medium text-white-500 md:ml-2">Plan. Explore. Enjoy.</span>
+    </div>
+    <nav class="hidden md:flex gap-8 text-white-700 font-semibold">
+      <a href="index.html" class="hover:text-yellow-600 transition">Home</a>
+      <a href="company.html" class="hover:text-yellow-600 transition">Company</a>
+      <a href="packages.html" class="hover:text-yellow-600 transition">Packages</a>
+      <a href="bookNow.html" class="hover:text-yellow-600 transition">bookNow</a>
+    </nav>
+    <div class="md:hidden flex items-center">
+      <button id="menu-btn" class="text-gray-700 text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-6 py-4 shadow-lg flex flex-col gap-4 ">
+    <a href="../index.html" class="hover:text-blue-600">Home</a>
+    <a href="company.html" class="hover:text-blue-600">Company</a>
+    <a href="packages.html" class="hover:text-blue-600">Packages</a>
+    <a href="bookNow.html" class="hover:text-blue-600">bookNow</a>
+  </div>
+</header>
+
+
+  <div class="locations-wrapper">
+    <h2 class="title">OUR LOCATIONS</h2>
+
+    <div class="grid">
+
+      <!-- MADURAI -->
+      <div class="card">
+        <h3>Madurai</h3>
+        <p>123, Meenakshi Amman Temple Road,<br>Madurai, Tamil Nadu – 625001.</p>
+       
+        <p>madurai@travel.com</p>
+        <button class="btn" onclick="enquiry('Madurai')">Enquiry</button>
+      </div>
+
+      <!-- PONDICHERRY -->
+      <div class="card">
+        <h3>Pondicherry</h3>
+        <p>Beach Road, White Town,<br>Puducherry – 605001.</p>
+  
+        <p>pondy@travel.com</p>
+        <button class="btn" onclick="enquiry('Pondicherry')">Enquiry</button>
+      </div>
+
+      <!-- BANGALORE -->
+      <div class="card">
+        <h3>Bangalore</h3>
+        <p>MG Road, Ashok Nagar,<br>Bangalore – 560001.</p>
+      
+        <p>bangalore@travel.com</p>
+        <button class="btn" onclick="enquiry('Bangalore')">Enquiry</button>
+      </div>
+
+      <!-- CHENNAI -->
+      <div class="card">
+        <h3>Chennai</h3>
+        <p>Anna Nagar East,<br>Chennai – 600040.</p>
+       
+        <p>chennai@travel.com</p>
+        <button class="btn" onclick="enquiry('Chennai')">Enquiry</button>
+      </div>
+
+      <!-- COIMBATORE -->
+      <div class="card">
+        <h3>Coimbatore</h3>
+        <p>Gandhipuram 4th Street,<br>Coimbatore – 641012.</p>
+        
+        <p>coimbatore@travel.com</p>
+        <button class="btn" onclick="enquiry('Coimbatore')">Enquiry</button>
+      </div>
+
+      <!-- KANYAKUMARI -->
+      <div class="card">
+        <h3>Kanyakumari</h3>
+        <p>Beach Road,<br>Kanyakumari – 629702.</p>
+    
+        <p>kanyakumari@travel.com</p>
+        <button class="btn" onclick="enquiry('Kanyakumari')">Enquiry</button>
+      </div>
+
+    </div>
+  </div>
+
+    </div>
+
+      <main class="page" role="main">
+    <!-- locations heading (kept minimal) -->
+    <section style="margin-bottom:16px;justify-content: center; text-align: center;">
+      <h2 style=" font-size:22px;margin:0 0 12px;color:#222;font-weight:700">Contact / Enquiry</h2>
+      <p style="margin:0;color:var(--muted)">Reach out to us — quick enquiry form on the right, contact details on the left.</p>
+    </section>
+<br>
+    <!-- contact + form -->
+    <section class="contact-row" aria-labelledby="contactTitle">
+
+      <!-- LEFT: stay connected -->
+      <div class="col-left">
+        <div class="stay-card" role="region" aria-label="Stay connected card">
+          <h2 id="contactTitle">Stay Connected</h2>
+
+          <div style="margin-top:6px"></div>
+
+          <div class="contact-icon" aria-hidden="true">
+            <i class="fa-solid fa-phone" style="font-size:18px;color:#111"></i>
+          </div>
+          <div class="contact-text">+91 9840882200</div>
+
+          <div class="divider-hr" aria-hidden="true"></div>
+
+          <div class="contact-icon" aria-hidden="true">
+            <i class="fa-regular fa-envelope" style="font-size:18px;color:#111"></i>
+          </div>
+          <div class="contact-text">mail@journeyhive.in</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: enquiry form -->
+      <div class="col-right">
+        <form id="cForm" class="form-card" novalidate>
+          <div>
+            <h3>Enquiry Form</h3>
+            <p style="margin:6px 0 14px;color:var(--muted);font-size:14px">Tell us about your travel plans — we'll get back within 24 hours.</p>
+          </div>
+
+          <div class="form-grid" role="group" aria-label="Enquiry fields">
+            <div class="field-wrap">
+              <label class="form-label" for="fName">Full Name *</label>
+              <input id="fName" class="form-control" type="text" autocomplete="name" />
+              <div class="error-msg" id="err-fName">Enter your full name</div>
+            </div>
+
+            <div class="field-wrap">
+              <label class="form-label" for="fCity">City *</label>
+              <input id="fCity" class="form-control" type="text" autocomplete="address-level2" />
+              <div class="error-msg" id="err-fCity">Enter your city</div>
+            </div>
+
+            <div class="field-wrap form-row-full">
+              <label class="form-label" for="fEmail">Email (Gmail only) *</label>
+              <input id="fEmail" class="form-control" type="email" placeholder="example@gmail.com" autocomplete="email" />
+              <div class="error-msg" id="err-fEmail">Email must be a Gmail address (example@gmail.com)</div>
+            </div>
+
+            <div class="field-wrap form-row-full">
+              <label class="form-label" for="fPhone">Phone Number *</label>
+              <input id="fPhone" class="form-control" type="tel" maxlength="10" inputmode="numeric" placeholder="10 digits" />
+              <div class="error-msg" id="err-fPhone">Enter a valid 10-digit number</div>
+            </div>
+
+            <div class="field-wrap form-row-full">
+              <label class="form-label" for="fDest">Travel Destination *</label>
+              <input id="fDest" class="form-control" type="text" />
+              <div class="error-msg" id="err-fDest">Enter your destination</div>
+            </div>
+
+            <div class="field-wrap">
+              <label class="form-label" for="fDate">Date of Travel *</label>
+              <input id="fDate" class="form-control" type="date" />
+              <div class="error-msg" id="err-fDate">Select a date</div>
+            </div>
+
+            <div class="field-wrap">
+              <label class="form-label" for="fPeople">No. of People *</label>
+              <input id="fPeople" class="form-control" type="number" min="1" />
+              <div class="error-msg" id="err-fPeople">Enter number of people</div>
+            </div>
+
+            <div class="field-wrap form-row-full">
+              <label class="form-label" for="fVac">Vacation Type *</label>
+              <select id="fVac" class="form-control">
+                <option value="">Select</option>
+                <option>Family</option>
+                <option>Honeymoon</option>
+                <option>Friends</option>
+              </select>
+              <div class="error-msg" id="err-fVac">Select a vacation type</div>
+            </div>
+
+            <div class="field-wrap form-row-full">
+              <label class="form-label">Captcha *</label>
+              <div class="captcha-row">
+                <div style="font-weight:700">4 + 1 =</div>
+                <input id="fCap" class="form-control" style="max-width:120px" inputmode="numeric" />
+              </div>
+              <div class="error-msg" id="err-fCap">Captcha answer must be 5</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <button type="button" id="submitBtn" class="submit-btn">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+<br><br>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 pt-12">
+  <div class="container mx-auto grid md:grid-cols-4 gap-8 px-6 md:px-0">
+
+    <!-- Column 1: Corporate Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Corporate Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        Novel Tech Park,<br>
+        Opposite to 1 MG Mall,<br>
+        MG Road, Bangalore – 560042<br>
+        Karnataka, India.
+      </p>
+    </div>
+
+    <!-- Column 2: Head Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Head Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        No.1, Gemini Parsn,<br>
+        Kodambakkam High Road,<br>
+        Nungambakkam, Chennai – 600006<br>
+        Tamil Nadu, India.
+      </p>
+    </div>
+
+    <!-- Column 3: Branches -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Our Branches</h3>
+      <ul class="space-y-1 text-gray-400">
+        <li>Madurai</li>
+        <li>Pondicherry</li>
+        <li>Bangalore</li>
+        <li>Chennai</li>
+        <li>Coimbatore</li>
+        <li>Kanyakumari</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact + Social -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Connect With Us</h3>
+      <p>Phone: +91 9940882200</p>
+      <p>Email: mail@journeyhive.in</p>
+      <div class="flex gap-4 mt-2">
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="LinkedIn" class="w-6 h-6"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="container mx-auto mt-12 border-t border-gray-700 pt-6 px-6 md:px-0 text-center text-gray-400 text-sm space-y-2">
+    <p>© 2025 JourneyHive. All Rights Reserved.</p>
+    <p>
+      <a href="#" class="hover:text-white transition">Privacy Policy</a> | 
+      <a href="#" class="hover:text-white transition">Terms & Conditions</a> | 
+      <a href="#" class="hover:text-white transition">Cancellation & Refund Policy</a>
+    </p>
+  </div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+<script>
+  // ================= BACK TO TOP =================
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) backToTopBtn.classList.remove('hidden');
+    else backToTopBtn.classList.add('hidden');
+  });
+  backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+
+  // Initialize AOS
+  AOS.init({ duration: 1000 });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+     // ==== Basic validation & helpers ====
+    const form = document.getElementById('cForm');
+    function showErr(id, show) {
+      const el = document.getElementById(id);
+      const err = document.getElementById('err-' + id);
+      if (err) err.style.display = show ? 'block' : 'none';
+      if (el) {
+        if (show) el.style.borderColor = '#dc3545';
+        else el.style.borderColor = '#e6e6e6';
+      }
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const name = document.getElementById('fName').value.trim();
+      const city = document.getElementById('fCity').value.trim();
+      const email = document.getElementById('fEmail').value.trim();
+      const phone = document.getElementById('fPhone').value.trim();
+      const dest = document.getElementById('fDest').value.trim();
+      const date = document.getElementById('fDate').value;
+      const people = document.getElementById('fPeople').value.trim();
+      const vac = document.getElementById('fVac').value;
+      const cap = document.getElementById('fCap').value.trim();
+
+      let ok = true;
+      showErr('fName', name.length < 2) && (ok = false);
+      showErr('fCity', city === '') && (ok = false);
+      showErr('fEmail', !/^[^\s@]+@gmail\.com$/.test(email)) && (ok = false);
+      showErr('fPhone', !/^[0-9]{10}$/.test(phone)) && (ok = false);
+      showErr('fDest', dest === '') && (ok = false);
+      showErr('fDate', date === '') && (ok = false);
+      showErr('fPeople', Number(people) <= 0 || people === '') && (ok = false);
+      showErr('fVac', vac === '') && (ok = false);
+      showErr('fCap', cap !== '5') && (ok = false);
+
+      if (!ok) {
+        // focus first visible invalid
+        const first = document.querySelector('.error-msg[style*="block"]');
+        if (first) {
+          const input = first.previousElementSibling;
+          if (input) input.focus();
+        }
+        return;
+      }
+
+      // Success (replace with actual submission)
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'SENT ✓';
+      setTimeout(() => {
+        alert('Form submitted');
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = 'SUBMIT';
+      }, 900);
+    });
+
+    // enquiry helper to prefill destination and scroll to form
+    function enquiry(branch){
+      const dest = document.getElementById('fDest');
+      dest.value = branch + ' Branch';
+      // on small screens we want contact -> form stacked, so scroll to form
+      document.querySelector('.form-card').scrollIntoView({behavior:'smooth', block:'center'});
+      document.getElementById('fName').focus();
+    }
+
+    // expose enquiry global if older code calls it
+    window.enquiry = enquiry;
+
+</script>
+</body>
+</html>

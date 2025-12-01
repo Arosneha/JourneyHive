@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JourneyHive - Home</title>
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<link rel="stylesheet" href="css/Style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="bg-gray-900 text-gray-200 font-sans shadow-md fixed w-full z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6 md:px-0">
+    <div class="text-2xl font-bold text-yellow-600 flex flex-col items-center md:flex-row md:items-center">
+      <span class="mr-2">✈️</span> JourneyHive
+      <span class="text-sm font-medium text-white-500 md:ml-2">Plan. Explore. Enjoy.</span>
+    </div>
+    <nav class="hidden md:flex gap-8 text-white-700 font-semibold">
+      <a href="index.html" class="hover:text-yellow-600 transition">Home</a>
+      <a href="company.html" class="hover:text-yellow-600 transition">Company</a>
+      <a href="packages.html" class="hover:text-yellow-600 transition">Packages</a>
+      <a href="bookNow.html" class="hover:text-yellow-600 transition">bookNow</a>
+    </nav>
+    <div class="md:hidden flex items-center">
+      <button id="menu-btn" class="text-gray-700 text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-6 py-4 shadow-lg flex flex-col gap-4 ">
+    <a href="../index.html" class="hover:text-blue-600">Home</a>
+    <a href="company.html" class="hover:text-blue-600">Company</a>
+    <a href="packages.html" class="hover:text-blue-600">Packages</a>
+    <a href="bookNow.html" class="hover:text-blue-600">bookNow</a>
+  </div>
+</header>
+
+<section class="hero bg-900">
+  <img id="bgImage" class="hero-bg" alt="hero background image" />
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left text-left">
+      <div class="hero-eyebrow" id="eyebrow">Adventure</div>
+
+      <h1 class="hero-title" id="heroTitle">
+        Discover <span id="heroHighlight" style="color:var(--accent)">Breathtaking</span> destinations
+      </h1>
+
+      <p class="hero-sub" id="heroSub">
+        Handpicked trips & experiences — Find your dream destinations, unforgettable experiences, and personalized trips — all in one place.
+      </p>
+
+      <a id="primaryCTA" class="hero-cta inline-block bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:opacity-95" href="packages.html">
+        Explore Packages
+      </a>
+    </div>
+
+    <div class="hero-right flex flex-col items-center">
+      <div class="cards" id="cardsWrap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Packages Section -->
+<section class="popular-packages">
+  <div class="container">
+    <h2 class="section-title" onclick="window.location.href='packages.html'">
+      Popular Packages
+    </h2>
+
+    <div class="packages-grid">
+      <div class="package-card">
+        <img src="asset/australia.jpg" alt="Australia">
+        <div class="package-info">
+          <a href="packages.html">
+            <h3>Australia</h3>
+            <p>19 Tours</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="asset/fiji.jpg" alt="Fiji">
+        <div class="package-info">
+          <a href="packages.html">
+            <h3>Fiji</h3>
+            <p>12 Tours</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="asset/newzealand.jpg" alt="New Zealand">
+        <div class="package-info">
+          <a href="packages.html">
+            <h3>New Zealand</h3>
+            <p>13 Tours</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="package-card">
+        <img src="asset/srilanka.jpg" alt="Sri Lanka">
+        <div class="package-info">
+          <a href="packages.html">
+          <h3>Sri Lanka</h3>
+          <p>18 Tours</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="asset/mauritius.jpg" alt="Mauritius">
+        <div class="package-info">
+          <a href="packages.html">
+          <h3>Mauritius</h3>
+          <p>7 Tours</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <img src="asset/madagascar.jpg" alt="Madagascar">
+        <div class="package-info">
+          <a href="packages.html">
+          <h3>Madagascar</h3>
+          <p>2 Tours</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Recommended Section -->
+<section class="recommended-section">
+    <div class="recommended-wrapper">
+
+        <img src="asset/recommended-section-bg.jpg" alt="" class="recommended-image">
+
+        <div class="recommended-box">
+            <h3>Recommended For You</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, laboriosam.</p>
+            <a href="bookNow.html" class="btn-book">Book Now</a>
+        </div>
+
+    </div>
+</section>
+<!-- our clients  -->
+ <div class="container py-5">
+    <h3 class="mb-4">Our Happy Clients</h3>
+
+    <div class="slider-wrapper">
+        <div class="slider-track" id="sliderTrack">
+
+            
+       <div class="client-card" style="background-image:url('asset/person1.jpg');">
+    <div class="client-content">"Amazing!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person8.jpg');">
+    <div class="client-content">"Wonderful trip!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person3.jpg');">
+    <div class="client-content">"Loved the service!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person7.jpg');">
+    <div class="client-content">"Very professional!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person4.jpg');">
+    <div class="client-content">"Will travel again!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person2.jpg');">
+    <div class="client-content">"Fantastic!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person6.jpg');">
+    <div class="client-content">"Best tour ever!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person5.jpg');">
+    <div class="client-content">"Highly recommended!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person9.jpg');">
+    <div class="client-content">"Great hospitality!"<br><small>– Client</small></div>
+</div>
+
+<div class="client-card" style="background-image:url('asset/person10.jpg');">
+    <div class="client-content">"Memorable trip!"<br><small>– Client</small></div>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<!-- tours  -->
+ 
+    
+   <section class="trending-section">
+    <h2>Trending Tours</h2>
+
+    <div class="tour-grid">
+          
+        <div class="tour-card">
+            <img src="asset/dubai.jpg" alt="dubai">
+            <a href="packages.html">
+            <div class="tour-info">
+                <p class="location">📍 Dubai – United Arab Emirates</p>
+                <h3>Dubai City Tour Package</h3>
+                <p class="days">⏱ 3 Nights 4 Days</p>
+            </div>
+            </a>
+        </div>
+
+        <div class="tour-card">
+            <img src="asset/switzerland.jpg" alt="switzerland">
+            <a href="packages.html">
+            <div class="tour-info">
+
+                <p class="location">📍 Switzerland, Zurich</p>
+                <h3>Best of Switzerland Package</h3>
+                <p class="days">⏱ 4 Nights 5 Days</p>
+            </div>
+            </a>
+        </div>
+
+        <div class="tour-card">
+            <img src="asset/singapore.jpg" alt="singapore">
+            <a href="packages.html">
+            <div class="tour-info">
+                <p class="location">📍 Singapore, Sentosa</p>
+                <h3>Amazing Singapore Tour</h3>
+                <p class="days">⏱ 3 Nights 4 Days</p>
+            </div>
+            </a>
+        </div>
+
+        <div class="tour-card">
+            <img src="asset/Mauritius-tour.jpg" alt="mauritius">
+            <a href="packages.html">
+            <div class="tour-info">
+                <p class="location">📍 Mauritius</p>
+                <h3>Magical Mauritius Tour Itinerary</h3>
+                <p class="days">⏱ 4 Nights 5 Days</p>
+            </div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Holiday Plan Section -->
+<section class="holiday-plan-section">
+    <div class="holiday-content">
+        <h2 class="text-black-600">Plan Your Summer Holiday</h2>
+
+        <p class="text-black-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore ab quis omnis. Excepturi, corrupti tenetur.</p>
+
+        <a href="packages.html" class="btn btn-book btn-yellow-600">Check Summer Deals</a>
+    </div>
+</section>
+
+
+<!-- ================= NEWSLETTER SECTION ================= -->
+<section class="bg-gray-100 text-gray-800 py-12">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-0">
+    <!-- Left: Bell + Text -->
+    <div class="flex items-center gap-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/1827/1827301.png" alt="Bell Icon" class="w-12 h-12">
+      <div>
+        <h3 class="text-2xl font-bold">Get Updates & More</h3>
+        <p class="text-gray-600">Thoughtful travel tips straight to your inbox</p>
+      </div>
+    </div>
+
+    <!-- Right: Email + Subscribe -->
+    <form class="flex gap-2 w-full md:w-auto" onsubmit="alert('Subscribed!'); return false;">
+      <input type="email" placeholder="Your Email" required class="p-3 rounded-l-lg w-full md:w-64 text-gray-800 focus:outline-none border border-gray-300">
+      <button type="submit" class="bg-blue-600 text-white font-semibold px-6 rounded-r-lg hover:bg-blue-700 transition">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 pt-12">
+  <div class="container mx-auto grid md:grid-cols-4 gap-8 px-6 md:px-0">
+
+    <!-- Column 1: Corporate Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Corporate Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        Novel Tech Park,<br>
+        Opposite to 1 MG Mall,<br>
+        MG Road, Bangalore – 560042<br>
+        Karnataka, India.
+      </p>
+    </div>
+
+    <!-- Column 2: Head Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Head Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        No.1, Gemini Parsn,<br>
+        Kodambakkam High Road,<br>
+        Nungambakkam, Chennai – 600006<br>
+        Tamil Nadu, India.
+      </p>
+    </div>
+
+    <!-- Column 3: Branches -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Our Branches</h3>
+      <ul class="space-y-1 text-gray-400">
+        <li>Madurai</li>
+        <li>Pondicherry</li>
+        <li>Bangalore</li>
+        <li>Chennai</li>
+        <li>Coimbatore</li>
+        <li>Kanyakumari</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact + Social -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Connect With Us</h3>
+      <p>Phone: +91 9940882200</p>
+      <p>Email: mail@journeyhive.in</p>
+      <div class="flex gap-4 mt-2">
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="LinkedIn" class="w-6 h-6"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="container mx-auto mt-12 border-t border-gray-700 pt-6 px-6 md:px-0 text-center text-gray-400 text-sm space-y-2">
+    <p>© 2025 JourneyHive. All Rights Reserved.</p>
+    <p>
+      <a href="#" class="hover:text-white transition">Privacy Policy</a> | 
+      <a href="#" class="hover:text-white transition">Terms & Conditions</a> | 
+      <a href="#" class="hover:text-white transition">Cancellation & Refund Policy</a>
+    </p>
+  </div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+<script src="js/index.js"></script>
+</body>
+</html>

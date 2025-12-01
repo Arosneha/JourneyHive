@@ -1,0 +1,153 @@
+
+      body { font-family: 'Poppins', sans-serif; }
+  .hover-scale:hover { transform: scale(1.05) rotateX(2deg); transition: 0.3s ease-in-out; }
+  .hover-shadow:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: 0.3s ease-in-out; }
+  .glass-card {
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+   /* hero */
+  .hero{ background:linear-gradient(90deg,#ffd647,#f8b600); padding:72px 20px; text-align:center; }
+  .hero h1{ margin:0 0 16px; font-size:40px; font-weight:700; }
+  .search-wrap{ max-width:920px; margin:0 auto; display:flex; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 28px rgba(15,30,61,0.12); }
+  .search-left{ display:flex; align-items:center; gap:10px; padding:12px 16px; flex:1; }
+  .search-left input{ width:100%; border:0; outline:0; font-size:15px; }
+  .search-btn{ background:var(--accent); color:#fff; border:0; padding:12px 22px; cursor:pointer; font-weight:600; }
+  /* container */
+  .container{ max-width:var(--maxw); margin:32px auto; padding:0 25px; }
+  .topbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; gap:12px; }
+  .count{ font-weight:700; }
+  /* grid */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:var(--gap); }
+ /* --- GRID IMPROVEMENTS --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;               /* ★ Smooth uniform spacing between cards */
+  padding: 10px 0;
+}
+/* Make navbar slim */
+header {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+header .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 50px !important;
+}
+
+/* Center logo + menu vertically */
+header .container > div,
+header nav a {
+    line-height: 50px !important;
+}
+
+/* Slim font size */
+header nav a {
+    font-size: 14px !important;
+}
+
+/* Reduce spacing between menu items */
+header nav {
+    gap: 20px !important;
+}
+
+/* Reduce mobile menu padding */
+#mobile-menu {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* --- CARD STYLING UPGRADE --- */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;            /* ★ Perfect equal height grid */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.16);
+}
+
+/* --- CARD IMAGE FIX --- */
+.card img {
+  width: 100%;
+  height: 190px;           /* Slightly taller visuals */
+  object-fit: cover;
+  background: #eaeaea;
+}
+
+/* --- CARD CONTENT AREA --- */
+.card-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+/* --- TOP TEXT (COUNTRY) --- */
+.meta {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* --- TITLE STYLE --- */
+.title {
+  color: #1d4ed8;          /* prettier blue */
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* --- DURATION --- */
+.dur {
+  font-size: 13px;
+  color: #1f2937;
+  font-weight: 600;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;  /* subtle divider */
+}
+
+/* Shake animation for error box */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease;
+}
+
+/* --- MOBILE TWEAK --- */
+@media(max-width: 640px){
+  .grid {
+    gap: 20px;
+  }
+  .card img {
+    height: 170px;
+  }
+}
+.meta{ color:var(--muted); font-size:13px; margin-bottom:6px; }
+  .title{ color:var(--accent); font-weight:600; font-size:15px; margin-bottom:8px; text-decoration:none; }
+  .dur{ font-size:13px; color:#333; font-weight:600; }
+  #noResults{ display:none; text-align:center; margin-top:20px; font-weight:700; color:#c33; }
+  @media(max-width:640px){ .hero{ padding:36px 12px; } .hero h1{ font-size:28px; } }
+  
+ 

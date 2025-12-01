@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JourneyHive - Packages</title>
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+<link rel="stylesheet" href="css/packages.css">
+</head>
+
+<body class="bg-gray-100 ">
+<header class="navbar-slim bg-gray-900 text-gray-200 fixed w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 h-14">
+    
+    <!-- Logo -->
+    <div class="flex items-center text-yellow-500 font-bold text-xl">
+      <span class="mr-2">✈️</span> JourneyHive
+      <span class="text-xs text-gray-300 ml-1">Plan. Explore. Enjoy.</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-6 text-gray-300 text-sm font-medium">
+      <a href="index.html" class="hover:text-yellow-500">Home</a>
+      <a href="company.html" class="hover:text-yellow-500">Company</a>
+      <a href="packages.html" class="hover:text-yellow-500">Packages</a>
+      <a href="bookNow.html" class="hover:text-yellow-500">Book Now</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-gray-300 text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-900 text-gray-200 px-6 py-4">
+    <a href="index.html" class="block py-2 hover:text-yellow-500">Home</a>
+    <a href="company.html" class="block py-2 hover:text-yellow-500">Company</a>
+    <a href="packages.html" class="block py-2 hover:text-yellow-500">Packages</a>
+    <a href="bookNow.html" class="block py-2 hover:text-yellow-500">Book Now</a>
+  </div>
+</header>
+
+<!-- ================= HERO SECTION WITH SEARCH BOX ================= -->
+<section class="hero bg-gradient-to-r from-yellow-400 to-yellow-500 pt-32 pb-16 text-center text-gray-900">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">Find Your Perfect Tour Package</h1>
+  <p class="text-gray-800 mb-6 font-medium">Search from thousands of curated itineraries</p>
+
+  <div class="search-wrap mx-auto w-full max-w-3xl flex bg-white shadow-xl rounded-xl overflow-hidden">
+    <div class="flex items-center gap-3 px-4 flex-1">
+      <i class="fas fa-search text-gray-500 text-lg"></i>
+      <input
+        id="search"
+        type="text"
+        placeholder="Search destinations, countries, or tour names..."
+        class="w-full py-3 outline-none text-gray-700"
+      />
+    </div>
+
+    <button id="searchBtn"
+class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold 
+hover:bg-blue-700 active:scale-95 transition-all duration-300 shadow-md">
+Search
+</button>
+
+  </div>
+</section>
+
+
+<main class="container">
+
+
+  <section id="grid" class="grid" aria-live="polite"></section>
+
+  <p id="noResults">❌ No tour packages found</p>
+</main>
+
+
+<!-- ================= NEWSLETTER SECTION ================= -->
+<section class="bg-gray-100 text-gray-800 py-12">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-0">
+    <!-- Left: Bell + Text -->
+    <div class="flex items-center gap-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/1827/1827301.png" alt="Bell Icon" class="w-12 h-12">
+      <div>
+        <h3 class="text-2xl font-bold">Get Updates & More</h3>
+        <p class="text-gray-600">Thoughtful travel tips straight to your inbox</p>
+      </div>
+    </div>
+
+    <!-- Right: Email + Subscribe -->
+    <form class="flex gap-2 w-full md:w-auto" onsubmit="alert('Subscribed!'); return false;">
+      <input type="email" placeholder="Your Email" required class="p-3 rounded-l-lg w-full md:w-64 text-gray-800 focus:outline-none border border-gray-300">
+      <button type="submit" class="bg-blue-600 text-white font-semibold px-6 rounded-r-lg hover:bg-blue-700 transition">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 pt-12">
+  <div class="container mx-auto grid md:grid-cols-4 gap-8 px-6 md:px-0">
+
+    <!-- Column 1: Corporate Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Corporate Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        Novel Tech Park,<br>
+        Opposite to 1 MG Mall,<br>
+        MG Road, Bangalore – 560042<br>
+        Karnataka, India.
+      </p>
+    </div>
+
+    <!-- Column 2: Head Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Head Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        No.1, Gemini Parsn,<br>
+        Kodambakkam High Road,<br>
+        Nungambakkam, Chennai – 600006<br>
+        Tamil Nadu, India.
+      </p>
+    </div>
+
+    <!-- Column 3: Branches -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Our Branches</h3>
+      <ul class="space-y-1 text-gray-400">
+        <li>Madurai</li>
+        <li>Pondicherry</li>
+        <li>Bangalore</li>
+        <li>Chennai</li>
+        <li>Coimbatore</li>
+        <li>Kanyakumari</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact + Social -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Connect With Us</h3>
+      <p>Phone: +91 9940882200</p>
+      <p>Email: mail@journeyhive.in</p>
+      <div class="flex gap-4 mt-2">
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="LinkedIn" class="w-6 h-6"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="container mx-auto mt-12 border-t border-gray-700 pt-6 px-6 md:px-0 text-center text-gray-400 text-sm space-y-2">
+    <p>© 2025 JourneyHive. All Rights Reserved.</p>
+    <p>
+      <a href="#" class="hover:text-white transition">Privacy Policy</a> | 
+      <a href="#" class="hover:text-white transition">Terms & Conditions</a> | 
+      <a href="#" class="hover:text-white transition">Cancellation & Refund Policy</a>
+    </p>
+  </div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+<script src="js/packages.js"></script>
+
+</body>
+</html>

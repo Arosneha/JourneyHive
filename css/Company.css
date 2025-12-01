@@ -1,0 +1,63 @@
+
+ 
+  body { 
+    font-family: 'Poppins', sans-serif;
+ }
+  .hover-scale:hover { 
+    transform: scale(1.05) rotateX(2deg);
+     transition: 0.3s ease-in-out;
+     }
+  .hover-shadow:hover {
+     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      transition: 0.3s ease-in-out;
+     }
+  .glass-card {
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+/* Apply border + shadow to all cards */
+.card-default {
+  @apply border border-gray-300 shadow-xl rounded-xl;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Layer */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/asset/company-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  
+  transform: scale(1);
+  animation: heroZoom 10s ease-in-out infinite alternate;
+
+  z-index: -1; /* keeps text on top */
+}
+
+/* Keyframes */
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+    filter: blur(1.5px);
+  }
+  100% {
+    transform: scale(1.06);
+    filter: blur(2.5px);
+  }
+}
+.team-card img {
+  width: 480px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 9999px; /* perfect circle */
+}
+

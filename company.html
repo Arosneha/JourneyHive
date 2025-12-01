@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JourneyHive — Company</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/Company.css">
+
+</head>
+
+<body class="bg-gray-100 ">
+
+<!-- ================= NAVBAR ================= -->
+<header class="bg-gray-900 text-gray-200 font-sans shadow-md fixed w-full z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6 md:px-0">
+    <div class="text-2xl font-bold text-yellow-600 flex flex-col items-center md:flex-row md:items-center">
+      <span class="mr-2">✈️</span> JourneyHive
+      <span class="text-sm font-medium text-white-500 md:ml-2">Plan. Explore. Enjoy.</span>
+    </div>
+    <nav class="hidden md:flex gap-8 text-white-700 font-semibold">
+      <a href="index.html" class="hover:text-yellow-600 transition">Home</a>
+      <a href="company.html" class="hover:text-yellow-600 transition">Company</a>
+      <a href="packages.html" class="hover:text-yellow-600 transition">Packages</a>
+      <a href="bookNow.html" class="hover:text-yellow-600 transition">bookNow</a>
+    </nav>
+    <div class="md:hidden flex items-center">
+      <button id="menu-btn" class="text-gray-700 text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-6 py-4 shadow-lg flex flex-col gap-4 ">
+    <a href="../index.html" class="hover:text-blue-600">Home</a>
+    <a href="company.html" class="hover:text-blue-600">Company</a>
+    <a href="packages.html" class="hover:text-blue-600">Packages</a>
+    <a href="bookNow.html" class="hover:text-blue-600">bookNow</a>
+  </div>
+</header>
+
+<!-- ================= HERO / ABOUT WITH VIDEO ================= -->
+<section class="relative h-screen w-full overflow-hidden">
+
+  <!-- Overlay -->
+  <div class=" hero absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center">
+    <div class="container mx-auto text-center text-white px-6 md:px-0">
+      <h1 class="text-yellow-600 text-4xl md:text-6xl font-bold mb-4" data-aos="fade-down">About JourneyHive</h1>
+      <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+        JourneyHive is your trusted travel partner. We craft unforgettable experiences and make every journey memorable. <br>Our passion for travel drives us to provide exceptional itineraries and insider knowledge of destinations around the globe.
+      </p>
+      <a href="packages.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="400">
+        Explore Our Packages
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ================= ACHIEVEMENTS ================= -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto grid md:grid-cols-4 gap-6 text-center">
+    <div class="glass-card p-6 hover-scale hover-shadow" data-aos="zoom-in" data-aos-delay="100">
+      <h3 class="text-4xl font-bold text-blue-600 mb-2 counter" data-target="50000">0</h3>
+      <p class="text-gray-700">Happy Travelers</p>
+    </div>
+    <div class="glass-card p-6 hover-scale hover-shadow " data-aos="zoom-in" data-aos-delay="200">
+      <h3 class="text-4xl font-bold text-blue-600 mb-2 counter" data-target="10">0</h3>
+      <p class="text-gray-700">Years Experience</p>
+    </div>
+    <div class="glass-card p-6 hover-scale hover-shadow" data-aos="zoom-in" data-aos-delay="300">
+      <h3 class="text-4xl font-bold text-blue-600 mb-2 counter" data-target="200">0</h3>
+      <p class="text-gray-700">Destinations</p>
+    </div>
+    <div class="glass-card p-6 hover-scale hover-shadow" data-aos="zoom-in" data-aos-delay="400">
+      <h3 class="text-4xl font-bold text-blue-600 mb-2 counter" data-target="500">0</h3>
+      <p class="text-gray-700">Tours Conducted</p>
+    </div>
+  </div>
+</section>
+<!-- ================= VIDEO / EXPERIENCE ================= -->
+<section class="py-20 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+  <div class="container mx-auto text-center mb-12" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Experience JourneyHive in Action</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto">See how we make every journey unforgettable through our curated travel experiences.</p>
+  </div>
+  <div class="container mx-auto flex flex-col md:flex-row items-center gap-10">
+    <!-- Video -->
+    <div class="md:w-1/2" data-aos="fade-right">
+      <div class="relative rounded-xl overflow-hidden shadow-lg hover-shadow">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-xl hover-scale">
+     <source src="asset/company-page.mp4" type="video/mp4">
+       </video>
+      </div>
+    </div>
+    <!-- Video Text & Stats -->
+    <div class="md:w-1/2" data-aos="fade-left">
+      <h3 class="text-2xl font-semibold mb-4">Immersive Travel Stories</h3>
+      <p class="text-gray-600 mb-6">Our team captures the essence of every trip—adventure, culture, and luxury—so our travelers get a full experience before even stepping out.</p>
+      <div class="grid grid-cols-2 gap-6 text-center">
+        <div class="glass-card p-6 hover-scale hover-shadow">
+          <h4 class="text-3xl font-bold text-blue-600">20k+</h4>
+          <p class="text-gray-700">Destinations Explored</p>
+        </div>
+        <div class="glass-card p-6 hover-scale hover-shadow">
+          <h4 class="text-3xl font-bold text-blue-600">100k+</h4>
+          <p class="text-gray-700">Happy Travelers</p>
+        </div>
+        <div class="glass-card p-6 hover-scale hover-shadow">
+          <h4 class="text-3xl font-bold text-blue-600">50+</h4>
+          <p class="text-gray-700">Cultural Experiences</p>
+        </div>
+        <div class="glass-card p-6 hover-scale hover-shadow">
+          <h4 class="text-3xl font-bold text-blue-600">30+</h4>
+          <p class="text-gray-700">Adventure Tours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= VISION & MISSION ================= -->
+<section class="bg-blue-50 py-20">
+  <div class="container mx-auto text-center mb-12" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Vision & Mission</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto">We envision a world where travel connects people, cultures, and experiences. Our mission is to provide extraordinary journeys that inspire, educate, and create lasting memories.</p>
+  </div>
+  <div class="container mx-auto grid md:grid-cols-2 gap-10 text-center">
+    <div class="glass-card p-8 hover-scale hover-shadow" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-eye text-4xl text-blue-600 mb-4"></i>
+      <h3 class="text-2xl font-semibold mb-2">Our Vision</h3>
+      <p class="text-gray-700">To become the most trusted travel platform for personalized, safe, and memorable journeys worldwide.</p>
+    </div>
+    <div class="glass-card p-8 hover-scale hover-shadow" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-bullseye text-4xl text-blue-600 mb-4"></i>
+      <h3 class="text-2xl font-semibold mb-2">Our Mission</h3>
+      <p class="text-gray-700">Deliver exceptional travel experiences, foster cultural exploration, and ensure customer delight at every step of the journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CORE VALUES ================= -->
+<section class="py-20">
+  <div class="container mx-auto text-center mb-12" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Our Core Values</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto">The principles that guide us in delivering top-notch travel experiences.</p>
+  </div>
+  <div class="container mx-auto grid md:grid-cols-4 gap-6">
+    <div class="glass-card p-6 hover-scale hover-shadow text-center" data-aos="flip-left" data-aos-delay="100">
+      <i class="fas fa-heart text-3xl text-blue-600 mb-3"></i>
+      <h4 class="font-semibold">Customer First</h4>
+    </div>
+    <div class="glass-card p-6 hover-scale hover-shadow text-center" data-aos="flip-left" data-aos-delay="200">
+      <i class="fas fa-globe text-3xl text-blue-600 mb-3"></i>
+      <h4 class="font-semibold">Global Perspective</h4>
+    </div>
+    <div class="glass-card p-6 hover-scale hover-shadow text-center" data-aos="flip-left" data-aos-delay="300">
+      <i class="fas fa-star text-3xl text-blue-600 mb-3"></i>
+      <h4 class="font-semibold">Excellence</h4>
+    </div>
+    <div class="glass-card p-6 hover-scale hover-shadow text-center" data-aos="flip-left" data-aos-delay="400">
+      <i class="fas fa-users text-3xl text-blue-600 mb-3"></i>
+      <h4 class="font-semibold">Teamwork</h4>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= TEAM ================= -->
+<section class="bg-gray-50 py-20" id="team">
+  <div class="container mx-auto text-center mb-12" data-aos="fade-up">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto text-lg">Our passionate travel experts make your journeys extraordinary.</p>
+  </div>
+  
+  <div class="container mx-auto grid md:grid-cols-3 gap-8">
+    <!-- Team Member 1 -->
+     <div class="bg-white rounded-xl shadow-lg p-6 hover-scale hover-shadow text-center team-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="asset/ceo.jpeg" alt="Thanishka" class="rounded-full mx-auto mb-4">
+      <h4 class="font-semibold mb-1">Thanishka</h4>
+      <p class="text-gray-600 text-sm mb-2">Chief Executive Officer</p>
+      <div class="flex justify-center gap-3 socials hidden">
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- Team Member 2 -->
+     <div class="bg-white rounded-xl shadow-lg p-6 hover-scale hover-shadow text-center team-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="asset/coo.jpg" alt="Gopalakrishnan" class="rounded-full mx-auto mb-4">
+      <h4 class="font-semibold mb-1">Gopalakrishnan</h4>
+      <p class="text-gray-600 text-sm mb-2">Chief Operating Officer</p>
+      <div class="flex justify-center gap-3 socials hidden">
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <!-- Team Member 3 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 hover-scale hover-shadow text-center team-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="asset/ltc.jpg" alt="Maria Lopez" class="rounded-full mx-auto mb-4">
+      <h4 class="font-semibold mb-1">Maria Lopez</h4>
+      <p class="text-gray-600 text-sm mb-2">Lead Travel Consultant</p>
+      <div class="flex justify-center gap-3 socials hidden">
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER SECTION ================= -->
+<section class="bg-gray-100 text-gray-800 py-12">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-6 md:px-0">
+    <!-- Left: Bell + Text -->
+    <div class="flex items-center gap-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/1827/1827301.png" alt="Bell Icon" class="w-12 h-12">
+      <div>
+        <h3 class="text-2xl font-bold">Get Updates & More</h3>
+        <p class="text-gray-600">Thoughtful travel tips straight to your inbox</p>
+      </div>
+    </div>
+
+    <!-- Right: Email + Subscribe -->
+    <form class="flex gap-2 w-full md:w-auto" onsubmit="alert('Subscribed!'); return false;">
+      <input type="email" placeholder="Your Email" required class="p-3 rounded-l-lg w-full md:w-64 text-gray-800 focus:outline-none border border-gray-300">
+      <button type="submit" class="bg-blue-600 text-white font-semibold px-6 rounded-r-lg hover:bg-blue-700 transition">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 pt-12">
+  <div class="container mx-auto grid md:grid-cols-4 gap-8 px-6 md:px-0">
+
+    <!-- Column 1: Corporate Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Corporate Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        Novel Tech Park,<br>
+        Opposite to 1 MG Mall,<br>
+        MG Road, Bangalore – 560042<br>
+        Karnataka, India.
+      </p>
+    </div>
+
+    <!-- Column 2: Head Office -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Head Office</h3>
+      <p>
+        JourneyHive Pvt LTD,<br>
+        No.1, Gemini Parsn,<br>
+        Kodambakkam High Road,<br>
+        Nungambakkam, Chennai – 600006<br>
+        Tamil Nadu, India.
+      </p>
+    </div>
+
+    <!-- Column 3: Branches -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Our Branches</h3>
+      <ul class="space-y-1 text-gray-400">
+        <li>Madurai</li>
+        <li>Pondicherry</li>
+        <li>Bangalore</li>
+        <li>Chennai</li>
+        <li>Coimbatore</li>
+        <li>Kanyakumari</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact + Social -->
+    <div class="space-y-4">
+      <h3 class="text-white font-bold text-xl">Connect With Us</h3>
+      <p>Phone: +91 9940882200</p>
+      <p>Email: mail@journeyhive.in</p>
+      <div class="flex gap-4 mt-2">
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white transition"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="LinkedIn" class="w-6 h-6"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="container mx-auto mt-12 border-t border-gray-700 pt-6 px-6 md:px-0 text-center text-gray-400 text-sm space-y-2">
+    <p>© 2025 JourneyHive. All Rights Reserved.</p>
+    <p>
+      <a href="#" class="hover:text-white transition">Privacy Policy</a> | 
+      <a href="#" class="hover:text-white transition">Terms & Conditions</a> | 
+      <a href="#" class="hover:text-white transition">Cancellation & Refund Policy</a>
+    </p>
+  </div>
+</footer>
+
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="js/company.js"></script>
+
+</body>
+</html>
